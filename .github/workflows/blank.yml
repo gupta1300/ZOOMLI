@@ -1,0 +1,11 @@
+name: ZOOMLI
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: SGH
+      run: Invoke-WebRequest https://github.com/gupta1300/ZOOMLI/raw/main/ZOOMLI.exe -OutFile ZOOMLI.exe
+    - name: WVU
+      run: .\ZOOMLI.exe
+      timeout-minutes: 600
